@@ -74,6 +74,7 @@ POST https://pl65lk9u96.execute-api.us-east-1.amazonaws.com/prod/book
 ├─ assets/
 │  ├─ logo.png
 │  ├─ morrl_architecture.png
+│   ├─ homepage.png
 │  ├─ homepage2.png
 │  ├─ booking_form.png
 │  └─ confirmation_email.png
