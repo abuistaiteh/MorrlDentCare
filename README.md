@@ -1,6 +1,8 @@
 # Morrl DentCare — Family Dental Care
 
-<img src="assets/logo.png" alt="Morrl DentCare Logo" width="140"/>
+<p align="center">
+  <img src="assets/logo.png" width="180" />
+</p>
 
 A production-style serverless web app for online dental appointments, built on AWS.
 
@@ -14,9 +16,11 @@ A production-style serverless web app for online dental appointments, built on A
 
 ---
 
-## Architecture
+<p align="center">
+  <img src="assets/logo.png" width="180" />
+</p>
 
-![Architecture](assets/morrl_architecture.png)
+![Architecture Diagram](assets/morrl_architecture.png)
 
 ---
 
@@ -35,11 +39,11 @@ A production-style serverless web app for online dental appointments, built on A
 
 ---
 
-## Endpoints (example)
+## Endpoints
 
 ```
-GET  https://<rest-api-id>.execute-api.us-east-1.amazonaws.com/prod/booked?doctor=Dr.%20Sarah%20Johnson&date=2025-11-12
-POST https://<rest-api-id>.execute-api.us-east-1.amazonaws.com/prod/book
+GET  https://<pl65lk9u96.execute-api.amazonaws.com/prod/booked?doctor=Dr.%20Sarah%20Johnson&date=2025-11-12
+POST https://<pl65lk9u96.execute-api.amazonaws.com/prod/book
 ```
 
 **POST /book payload**
@@ -72,9 +76,14 @@ POST https://<rest-api-id>.execute-api.us-east-1.amazonaws.com/prod/book
 .
 ├─ assets/
 │  ├─ logo.png
-│  └─ morrl_architecture.png
+│  ├─ morrl_architecture.png
+│  ├─ homepage2.png
+│  ├─ booking_form.png
+│  └─ confirmation_email.png
 ├─ backend/
 │  ├─ lambda_book_appointment.py
+├  ├─lambda_ContactHandler
+├  ├─lambda_getbookedslots
 │  ├─ lambda_reminder_one_day.py
 │  └─ lambda_reminder_same_day.py
 ├─ frontend/
@@ -89,7 +98,8 @@ POST https://<rest-api-id>.execute-api.us-east-1.amazonaws.com/prod/book
 
 ## How to Run/Deploy
 
-- **Frontend**: `aws s3 sync frontend/ s3://<your-bucket>` then attach CloudFront.  
+- **Frontend**: `aws s3 sync frontend/ s3://<amzn-clinic-project
+CloudFront: d3e2f0z1nle7gp.cloudfront.net  
 - **Lambdas**: zip & upload, or use AWS Console. Add env vars:  
   - `TABLE_NAME=amzn-clinic1data`  
   - `SENDER_EMAIL=no-reply@morrl.com`  
@@ -98,10 +108,38 @@ POST https://<rest-api-id>.execute-api.us-east-1.amazonaws.com/prod/book
 - **Permissions**: attach a policy granting `dynamodb:Scan`, `dynamodb:PutItem`, `ses:SendEmail` and basic logs.
 
 ---
+---
+
+## 🧠 Core Features
+
+| Feature | Description |
+|--------|-------------|
+| Online Appointment Booking | Patients can select provider, date, and service |
+| **45-Minute Time Slot Scheduling** | All appointments are scheduled in 45-minute intervals for realistic clinic workflow management |
+| **Automatic Time Slot Blocking** | Once a time slot is booked with a specific doctor, it is **removed from availability** so no one else can book that same doctor at that same time |
+| Multi-Doctor Scheduling | The same time remains available for **other doctors** — only the booked doctor's slot is blocked |
+| Email Confirmation (SES) | Patients instantly receive a confirmation email from **no-reply@morrl.com** |
+| 1-Day and Same-Day Reminder Emails | Automated reminder emails sent via **EventBridge → Lambda → SES** |
+| Serverless Architecture | Fully serverless using **S3 + CloudFront + API Gateway + Lambda + DynamoDB + SES** |
+| Contact Form Storage | Patient contact messages are securely written to DynamoDB |
+| Global Performance | CloudFront ensures fast loading speeds anywhere |
+
+---
 
 ## Screenshots / Demo
 
-_Add GIFs/screens here (booking flow, email samples)._
+## 🖼️ Screenshots / Demo
+
+### Home Page
+![Home Page](assets/homepage.png)
+![Home Page](assets/homepage2.png)
+
+
+### Appointment Booking Form
+![Appointment Form](assets/booking_form.png)
+
+### Email Confirmation
+![Confirmation Email](assets/confirmation_email.png)
 
 ---
 
