@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Morrl DentCare – Book Appointment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Favicon (optional) -->
+  <link href="img/favicon.ico" rel="icon" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-4 py-3">
+    <a href="index.html" class="navbar-brand p-0 d-flex align-items-center gap-2">
+      <i class="fa fa-tooth text-primary"></i>
+      <span class="m-0 fw-bold text-primary">Morrl DentCare</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="appointment.html">Appointment</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="container-fluid bg-primary text-white py-5 mb-5">
+    <div class="container text-center">
+      <h1 class="display-5 fw-semibold">Book Your Appointment</h1>
+      <p class="mt-2 mb-0">Modern family dentistry in Charlotte</p>
+    </div>
+  </section>
+
+  <!-- Appointment Form -->
+  <main class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="card shadow border-0">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="text-center mb-4">Schedule Your Visit</h3>
+
+            <form id="appointmentForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="Your full name" required />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" class="form-control" placeholder="you@example.com" required />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="doctor" class="form-label">Select Doctor</label>
+                  <select id="doctor" class="form-select" required>
+                    <option value="">Choose Doctor</option>
+                    <option value="Dr. Sarah Johnson">Dr. Sarah Johnson</option>
+                    <option value="Dr. Michael Smith">Dr. Michael Smith</option>
+                    <option value="Dr. Emily Carter">Dr. Emily Carter</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="service" class="form-label">Service</label>
+                  <select id="service" class="form-select" required>
+                    <option value="">Select Service</option>
+                    <option value="Teeth Cleaning">Teeth Cleaning</option>
+                    <option value="Whitening">Whitening</option>
+                    <option value="Root Canal">Root Canal</option>
+                    <option value="Checkup">General Checkup</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="date" id="date" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="time" class="form-label">Time (45-min slots)</label>
+                  <select id="time" class="form-select" required>
+                    <!-- Populated by JS -->
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100 py-2">Book Appointment</button>
+                </div>
+              </div>
+            </form>
+
+            <div id="confirmationMessage" class="text-center fw-semibold mt-3" style="display:none; color:green;">
+              <!-- success text injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container-fluid text-light py-4" style="background:#051225;">
+    <div class="container text-center small">
+      © 2025 Morrl DentCare — 7735 N Tryon St, Charlotte, NC 28269 — +1 (571) 502-7375 — contact@morrl.com
+    </div>
+  </footer>
+
+  <!-- App Script (place BEFORE bootstrap bundle) -->
+  <script>
+    // Endpoints (live)
+    const bookedEndpoint = "https://pl65lk9u96.execute-api.us-east-1.amazonaws.com/prod/booked";
+    const bookEndpoint   = "https://pl65lk9u96.execute-api.us-east-1.amazonaws.com/prod/book";
+
+    // Generate 45-minute slots from 08:00 to 17:00 (inclusive), skipping any 'booked' array from API
+    function generateTimeSlots(booked = []) {
+      booked = Array.isArray(booked) ? booked : []; // safety: always array
+
+      const select = document.getElementById("time");
+      select.innerHTML = '<option value="">Select Time</option>';
+
+      let start = 8 * 60;   // 08:00 in minutes
+      const end = 17 * 60;  // 17:00 in minutes
+
+      while (start <= end) {
+        const hour = Math.floor(start / 60);
+        const minute = start % 60;
+
+        const valueTime = `${String(hour).padStart(2,'0')}:${String(minute).padStart(2,'0')}`;
+
+        if (!booked.includes(valueTime)) {
+          const displayHour = (hour % 12) || 12;
+          const displayMin  = String(minute).padStart(2,'0');
+          const period      = hour < 12 ? "AM" : "PM";
+          const displayTime = `${displayHour}:${displayMin} ${period}`;
+
+          const opt = document.createElement("option");
+          opt.value = valueTime;
+          opt.textContent = displayTime;
+          select.appendChild(opt);
+        }
+
+        start += 45; // 45-minute intervals
+      }
+    }
+
+    // Fetch already booked times for selected doctor+date
+    async function updateAvailableTimes() {
+      const doctor = document.getElementById("doctor").value;
+      const date   = document.getElementById("date").value;
+
+      if (!doctor || !date) {
+        generateTimeSlots([]); // default full list
+        return;
+      }
+
+      try {
+        const url = `${bookedEndpoint}?doctor=${encodeURIComponent(doctor)}&date=${encodeURIComponent(date)}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const bookedArray = Array.isArray(data.booked) ? data.booked : [];
+        generateTimeSlots(bookedArray);
+      } catch (e) {
+        console.error("Booked slots fetch failed:", e);
+        generateTimeSlots([]); // fallback to full list if API hiccups
+      }
+    }
+
+    // Prevent selecting past dates & render initial slots
+    document.addEventListener("DOMContentLoaded", () => {
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("date").setAttribute("min", today);
+      generateTimeSlots([]);
+    });
+
+    // Update availability when doctor or date changes
+    document.getElementById("doctor").addEventListener("change", updateAvailableTimes);
+    document.getElementById("date").addEventListener("change", updateAvailableTimes);
+
+    // Submit booking
+    document.getElementById("appointmentForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nameVal   = document.getElementById("name").value.trim();
+      const emailVal  = document.getElementById("email").value.trim();
+      const doctorVal = document.getElementById("doctor").value;
+      const serviceVal= document.getElementById("service").value;
+      const dateVal   = document.getElementById("date").value;
+      const timeVal   = document.getElementById("time").value;
+
+      const payload = {
+        name: nameVal,
+        email: emailVal,
+        doctor: doctorVal,
+        service: serviceVal,
+        date: dateVal,
+        time: timeVal
+      };
+
+      try {
+        const response = await fetch(bookEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          alert("⚠️ " + (result.error || "Booking failed. Please try again."));
+          return;
+        }
+
+        const msg = document.getElementById("confirmationMessage");
+        msg.style.display = "block";
+        msg.textContent = "✅ Appointment booked successfully!";
+
+        document.getElementById("appointmentForm").reset();
+
+        // Refresh availability so just-booked slot disappears
+        updateAvailableTimes();
+
+      } catch (err) {
+        console.error(err);
+        alert("❌ Unable to connect. Please try again.");
+      }
+    });
+  </script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

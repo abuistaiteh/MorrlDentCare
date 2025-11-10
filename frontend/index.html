@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Morrl DentCare | Bright Smiles Start Here</title>
+  <meta name="description" content="Morrl DentCare provides modern, family-friendly dentistry in Charlotte, NC. Cleanings, whitening, implants, braces, and more. Book online in minutes.">
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar py-2">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="index.html">
+      <i class="fa-solid fa-tooth me-2 fs-4 text-primary"></i>
+      Morrl <span class="text-dark ms-1">DentCare</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center small-nav">
+        <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item">
+          <a class="btn btn-primary btn-sm ms-lg-3 px-3" href="appointment.html">Book</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- HERO SLIDESHOW (replace your old hero section with this) -->
+<section id="hero" class="position-relative">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
+    <!-- Dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <!-- Slide 1: Doctors team (first image) -->
+      <div class="carousel-item active">
+        <img src="img/hero-team.jpg" class="d-block w-100 hero-img" alt="Dentists team in modern clinic">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption hero-caption">
+          <h2>Bright Smiles Start Here</h2>
+          <p>Modern family dentistry in Charlotte</p>
+          <div class="d-flex gap-2 justify-content-center">
+            <a class="btn btn-primary btn-sm-cta" href="appointment.html">Book Appointment</a>
+            <a class="btn btn-outline-light btn-sm-cta" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Patient in chair -->
+      <div class="carousel-item">
+        <img src="img/hero-patient.jpg" class="d-block w-100 hero-img" alt="Patient in dental chair">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption hero-caption">
+          <h2>Gentle, Trusted Care</h2>
+          <p>Comfort-first treatments for every age</p>
+        </div>
+      </div>
+
+      <!-- Slide 3: Assistant + equipment -->
+      <div class="carousel-item">
+        <img src="img/hero-assistant.jpg" class="d-block w-100 hero-img" alt="Dental assistant with equipment">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption hero-caption">
+          <h2>Advanced Technology</h2>
+          <p>Digital X-rays • Intraoral Cameras • Same-day</p>
+        </div>
+      </div>
+
+      <!-- Slide 4: Family -->
+      <div class="carousel-item">
+        <img src="img/hero-family.jpg" class="d-block w-100 hero-img" alt="Happy family after checkup">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption hero-caption">
+          <h2>Family Dentistry</h2>
+          <p>Welcoming kids, teens, and adults</p>
+        </div>
+      </div>
+
+      <!-- Slide 5: Office interior -->
+      <div class="carousel-item">
+        <img src="img/hero-office.jpg" class="d-block w-100 hero-img" alt="High-end dental office interior">
+        <div class="hero-overlay"></div>
+        <div class="carousel-caption hero-caption">
+          <h2>Clean • Calm • Professional</h2>
+          <p>Your smile, our priority</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+  <section class="py-4 bg-light border-top border-bottom">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md-3"><i class="fa-solid fa-shield-heart text-primary me-2"></i> Certified & Insured</div>
+        <div class="col-6 col-md-3"><i class="fa-solid fa-stethoscope text-primary me-2"></i> Modern Equipment</div>
+        <div class="col-6 col-md-3"><i class="fa-solid fa-people-group text-primary me-2"></i> Family Friendly</div>
+        <div class="col-6 col-md-3"><i class="fa-solid fa-clock text-primary me-2"></i> Flexible Hours</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="mb-3">About Morrl DentCare</h2>
+          <p class="text-muted">We combine compassion, expertise, and technology to deliver exceptional dentistry. From preventive care to implants and orthodontics, our team focuses on comfort and long‑term oral health.</p>
+          <ul class="list-unstyled small text-muted mb-4">
+            <li><i class="fa-solid fa-check text-primary me-2"></i> Transparent treatment plans & pricing</li>
+            <li><i class="fa-solid fa-check text-primary me-2"></i> Same‑day emergency appointments</li>
+            <li><i class="fa-solid fa-check text-primary me-2"></i> Personalized care for kids, teens, and adults</li>
+          </ul>
+          <a href="appointment.html" class="btn btn-primary">Schedule a Visit</a>
+        </div>
+        <div class="col-lg-6">
+          <img src="img/about-clinic.jpg" class="img-fluid rounded shadow-sm" alt="Clinic interior" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Dental Services</h2>
+      <p class="text-center text-muted mb-5">Comprehensive care designed around your smile.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 service-card p-3 text-center">
+            <i class="fa-solid fa-tooth fa-3x text-primary mb-3"></i>
+            <h5>Preventive Care</h5>
+            <p class="text-muted">Cleanings, exams, and digital X‑rays to keep your smile healthy.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 service-card p-3 text-center">
+            <i class="fa-regular fa-face-smile fa-3x text-primary mb-3"></i>
+            <h5>Cosmetic Dentistry</h5>
+            <p class="text-muted">Whitening, veneers, and bonding for a confident, bright smile.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 service-card p-3 text-center">
+            <i class="fa-solid fa-syringe fa-3x text-primary mb-3"></i>
+            <h5>Restorative</h5>
+            <p class="text-muted">Fillings, crowns, bridges, and implants to restore function.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 service-card p-3 text-center">
+            <i class="fa-solid fa-teeth-open fa-3x text-primary mb-3"></i>
+            <h5>Orthodontics</h5>
+            <p class="text-muted">Clear aligners and braces tailored to your bite and lifestyle.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 service-card p-3 text-center">
+            <i class="fa-solid fa-child-reaching fa-3x text-primary mb-3"></i>
+            <h5>Pediatric</h5>
+            <p class="text-muted">Gentle, positive visits to set kids up for lifelong oral health.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 service-card p-3 text-center">
+            <i class="fa-solid fa-toothbrush fa-3x text-primary mb-3"></i>
+            <h5>Periodontics</h5>
+            <p class="text-muted">Healthy gums through targeted cleaning and maintenance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Meet Our Dentists</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="img/doctor1.jpg" class="card-img-top" alt="Dr. William Johnson" />
+            <div class="card-body">
+              <h5 class="card-title mb-1">Dr. William Johnson</h5>
+              <small class="text-muted d-block mb-2">Orthodontist</small>
+              <p class="card-text text-muted">Specializing in clear aligners and comprehensive orthodontic care for teens and adults.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="img/doctor2.jpg" class="card-img-top" alt="Dr. Sarah Smith" />
+            <div class="card-body">
+              <h5 class="card-title mb-1">Dr. Sarah Smith</h5>
+              <small class="text-muted d-block mb-2">Cosmetic Dentist</small>
+              <p class="card-text text-muted">Focus on smile design, veneers, and minimally invasive cosmetic treatments.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="img/doctor3.jpg" class="card-img-top" alt="Dr. Jonathan Carter" />
+            <div class="card-body">
+              <h5 class="card-title mb-1">Dr. Jonathan Carter</h5>
+              <small class="text-muted d-block mb-2">Family Dentist</small>
+              <p class="card-text text-muted">Gentle, preventative care for children and adults with a focus on comfort.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">What Patients Say</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <blockquote class="blockquote mx-auto" style="max-width:760px;">
+              <p class="mb-4">“Absolutely the best dental experience I’ve had! Friendly team and amazing results.”</p>
+              <footer class="blockquote-footer">Emily R.</footer>
+            </blockquote>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote mx-auto" style="max-width:760px;">
+              <p class="mb-4">“My whitening treatment was quick and painless. I love my new smile!”</p>
+              <footer class="blockquote-footer">James W.</footer>
+            </blockquote>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote mx-auto" style="max-width:760px;">
+              <p class="mb-4">“Great with kids! The staff made our daughter feel comfortable and happy.”</p>
+              <footer class="blockquote-footer">Sophia M.</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Dental Insights</h2>
+        <a class="btn btn-link" href="#">View all</a>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="img/blog1.jpg" class="card-img-top" alt="Teeth whitening tips" />
+            <div class="card-body">
+              <h5 class="card-title">5 Whitening Tips for a Brighter Smile</h5>
+              <p class="card-text text-muted">Daily habits and professional options to safely brighten your teeth.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="img/blog2.jpg" class="card-img-top" alt="Kids dentistry" />
+            <div class="card-body">
+              <h5 class="card-title">How to Help Kids Love the Dentist</h5>
+              <p class="card-text text-muted">Simple steps to make every visit calm, positive, and fun.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="img/blog3.jpg" class="card-img-top" alt="Implants guide" />
+            <div class="card-body">
+              <h5 class="card-title">Dental Implants: What to Expect</h5>
+              <p class="card-text text-muted">From consultation to smile reveal — the complete journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6">
+          <p class="mb-1">7735 N Tryon St, Charlotte, NC 28269</p>
+          <p class="mb-1">✉️ contact@morrl.com</p>
+          <p class="mb-0">📞 +1 (571) 502‑7375</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="text-white me-3" href="index.html">Home</a>
+          <a class="text-white me-3" href="#services">Services</a>
+          <a class="text-white me-3" href="appointment.html">Appointment</a>
+          <a class="text-white" href="contact.html">Contact</a>
+        </div>
+      </div>
+      <hr class="border-secondary my-3" />
+      <div class="text-center small">© 2025 Morrl DentCare. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
