@@ -1,0 +1,61 @@
+:root{--primary:#0d6efd;--dark:#0b1729;--muted:#6c757d}
+*{box-sizing:border-box}body{font-family:'Poppins',sans-serif;color:#333;margin:0}
+.navbar .nav-link{color:#333!important}.navbar .nav-link:hover,.navbar .nav-link.active{color:var(--primary)!important}
+.hero-img{height:90vh;object-fit:cover;filter:brightness(86%)}.carousel-caption{bottom:20%}
+.carousel-caption h1,.carousel-caption h2{text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.border-top{border-top:1px solid #eef2f6!important}.border-bottom{border-bottom:1px solid #eef2f6!important}
+#about img{border-radius:12px}
+.service-card{border:none;border-radius:12px;box-shadow:0 5px 18px rgba(0,0,0,.06);transition:.25s}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.08)}
+#team .card{border-radius:12px}#team .card-img-top{height:280px;object-fit:cover}
+#testimonials .carousel{background:#f8f9fa;border-radius:12px;padding:56px 18px}
+#testimonials blockquote{background:none;border:none;font-style:italic;color:#333}
+#testimonials .blockquote-footer{background:none;color:#555;font-weight:600}
+#blog .card{border-radius:12px}#blog .card-img-top{height:200px;object-fit:cover}
+footer{background:#051225}footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+.btn{border-radius:8px;font-weight:600}.btn-primary{background:var(--primary);border-color:var(--primary)}.btn-primary:hover{background:#0b5ed7;border-color:#0b5ed7}
+/* Compact Modern Navbar */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.2rem;
+  letter-spacing: 0.3px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 10px !important;
+  color: #333 !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.custom-navbar.scrolled {
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+@media (max-width: 991px) {
+  .small-nav .nav-link {
+    padding: 8px 0 !important;
+  }
+}
