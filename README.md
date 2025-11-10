@@ -1,3 +1,30 @@
+<p align="center">
+  <img src="assets/logo.png" width="180" />
+</p>
+
+<h1 align="center">Morrl DentCare — Serverless Appointment System</h1>
+
+<p align="center">
+  <a href="https://www.morrl.com/index.html">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Website-blue?style=for-the-badge" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-Lambda-FF9900?style=flat&logo=aws-lambda&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-DynamoDB-4053D6?style=flat&logo=amazon-dynamodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-API%20Gateway-CC1F4A?style=flat&logo=amazon-api-gateway&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-SES-DD344C?style=flat&logo=mail.ru&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-EventBridge-8C4FFF?style=flat&logo=amazon-web-services&logoColor=white" />
+  <img src="https://img.shields.io/badge/Frontend-HTML/CSS/Bootstrap-563D7C?style=flat&logo=bootstrap&logoColor=white" />
+</p>
+
+<p align="center">
+A production-ready, fully serverless dental appointment booking platform with automated email confirmations and reminder notifications.
+</p>
+
+---
+
 # Morrl DentCare — Family Dental Care
 
 <p align="center">
