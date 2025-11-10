@@ -72,20 +72,41 @@ POST https://pl65lk9u96.execute-api.us-east-1.amazonaws.com/prod/book
 ```
 .
 ├─ assets/
-│  ├─ logo.png
-│  ├─ morrl_architecture.png
-│   ├─ homepage.png
-│  ├─ homepage2.png
-│  ├─ booking_form.png
-│  └─ confirmation_email.png
-├─ backend/
-│  ├─ lambda_book_appointment.py
-│  ├─ lambda_ContactHandler.py
-│  ├─ lambda_getbookedslots.py
-│  ├─ lambda_reminder_one_day.py
-│  └─ lambda_reminder_same_day.py
+│ ├─ logo.png
+│ ├─ morrl_architecture_v2.png
+│ ├─ homepage2.png
+│ ├─ booking_form.png
+│ └─ confirmation_email.png
+│
 ├─ frontend/
-│  └─ appointment.html
+│ ├─ index.html
+│ ├─ appointment.html
+│ ├─ contact.html (if applicable)
+│ │
+│ ├─ css/
+│ │ └─ style.css (main site styling)
+│   └─ bootstrap.min.css
+│ │
+│ └─ images/
+│ ├─ blog1.jpg
+│ ├─ blog2.jpg
+│ ├─ blog3.jpg
+│ ├─ doctor1.jpg
+│ ├─ doctor2.jpg
+│ ├─ doctor3.jpg
+│ ├─ hero-patient.jpg
+│ ├─ hero-office.jpg
+│ ├─ hero-team.jpg
+│ ├─ hero-assistant.jpg
+│ └─ hero-family.jpg
+│
+├─ backend/
+│ ├─ lambda_book_appointment.py
+│ ├─ lambda_ContactHandler.py
+│ ├─ lambda_getbookedslots.py
+│ ├─ lambda_reminder_one_day.py
+│ └─ lambda_reminder_same_day.py
+│
 ├─ LICENSE
 └─ README.md
 ```
